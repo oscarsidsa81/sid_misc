@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        VENTAS           -->
+
+        <record id="sid_sale_tree_currency_digits" model="ir.ui.view">
+            <field name="name">sale.order.line.tree.digits</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="priority">110</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='purchase_price']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sid_sale_form_currency_digits" model="ir.ui.view">
+            <field name="name">sale.order.line.form.digits</field>
+            <field name="model">sale.order.form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority">110</field>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='price_unit']"
+                       position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='purchase_price']"
+                       position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='purchase_price']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+<!--        COMPRAS             -->
+
+        <record id="sid_purchase_tree_currency_digits" model="ir.ui.view">
+            <field name="name">purchase.order.line.tree.digits</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+            <field name="priority">110</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sid_purchase_form_currency_digits" model="ir.ui.view">
+            <field name="name">purchase.order.line.form.digits</field>
+            <field name="model">purchase.order.form</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="priority">110</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                    <attribute name="digits">[12,2]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
