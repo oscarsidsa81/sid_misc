@@ -7,7 +7,8 @@
     "author": "oscarsidsa81",
     "license": "LGPL-3",
     "depends": ["sale", "product"],
-    "data": [],
+    "data": [
+        'views/sid_currency_digits.xml',],
     "installable": True,
     "application": False,
 }
