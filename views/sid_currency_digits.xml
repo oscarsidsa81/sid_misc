@@ -21,7 +21,7 @@
 
         <record id="sid_sale_form_currency_digits" model="ir.ui.view">
             <field name="name">sale.order.line.form.digits</field>
-            <field name="model">sale.order.form</field>
+            <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="priority">110</field>
             <field name="arch" type="xml">
@@ -58,7 +58,7 @@
 
         <record id="sid_purchase_form_currency_digits" model="ir.ui.view">
             <field name="name">purchase.order.line.form.digits</field>
-            <field name="model">purchase.order.form</field>
+            <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="priority">110</field>
             <field name="arch" type="xml">
